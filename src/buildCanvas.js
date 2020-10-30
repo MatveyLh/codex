@@ -115,7 +115,6 @@ const checkCoordinates = (width, height, ...coordinates) => {
 }
 
 const fill = (x, y, color, width, height) => {
-    debugger
     color = Symbol(color);
     const queue = [{x,y}];
     const visitedPixels = {};
