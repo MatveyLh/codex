@@ -49,7 +49,7 @@ class Canvas extends React.Component {
             <React.Fragment>
                 <div className={'input-wrapper'}>
                     <label htmlFor={'input-file'}>{!this.state.data.length ? 'Файл не загружен!' : ''}</label>
-                    <input type="file" className={'input-file'} onChange={(e) => this.showFile(e)}/>
+                    <input accept={'.txt'} type="file" className={'input-file'} onChange={(e) => this.showFile(e)}/>
                 </div>
                 {this.state.error ? <p className={'error-text'}>{this.state.error}</p> : <pre>{this.state.canvas}</pre>}
                 {this.state.url ? <a href={this.state.url} style={{textDecoration: "none", color: '#000000'}}
