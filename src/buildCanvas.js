@@ -34,7 +34,7 @@ export function buildCanvas(matrix, data) {
     let [x, y, color] = data[4].slice(2).split(' ');
     x = Number(x); y = Number(y);
 
-    if (!checkValues(x,y) || !checkCoordinates(width, height, x, y)) {
+    if (!checkValues(x,y) || !checkCoordinates(width, height, x, y) || color === '') {
         return [null, null, 'Fill coordinates are not correct!'];
     }
     result += fill(x, y, color, width, height) + '\n';
@@ -115,6 +115,7 @@ const checkCoordinates = (width, height, ...coordinates) => {
 }
 
 const fill = (x, y, color, width, height) => {
+    debugger
     color = Symbol(color);
     const queue = [{x,y}];
     const visitedPixels = {};
